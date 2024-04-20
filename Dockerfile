@@ -2,4 +2,4 @@ FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
 COPY . .
 RUN dotnet publish -c Release -o out
-ENTRYPOINT ["dotnet", "out/dotnet-banking.dll"]
+ENTRYPOINT ["dotnet", "out/ApnaBank.dll"]
