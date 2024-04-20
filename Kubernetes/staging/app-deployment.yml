@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: staging
+  name: dotnet-banking-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dotnet-banking-app
+  template:
+    metadata:
+      labels:
+        app: dotnet-banking-app
+    spec:
+      containers:
+      - name: dotnet-banking-app
+        image: thicksy/dotnet-banking-app:latest
+        ports:
+        - containerPort: 80
