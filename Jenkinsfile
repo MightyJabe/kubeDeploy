@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'mcr.microsoft.com/dotnet/sdk:5.0'
+            args '-u root:root' // Depending on your requirements
+        }
+    }
 
     stages {
         stage('Checkout Jenkinsfile Repo') {
