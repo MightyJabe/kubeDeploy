@@ -7,13 +7,15 @@ pipeline {
                 // This checks out the Jenkinsfile repository (assumes it's already configured in Jenkins)
                 checkout scm
             }
+        }
+
         stage('Checkout .NET Application Repo') {
             steps {
                 // This checks out the .NET application code from a different repository
                 git url: 'https://github.com/NikolaRadun/dotnet-banking-app.git'
-
             }
         }
+
         stage('Build') {
             steps {
                 sh 'dotnet restore'
@@ -36,6 +38,7 @@ pipeline {
                         // Build and push the Docker image
                         docker.build("thicksy/dotnet-banking-app:${BUILD_ID}").push()
                     }
+                }
             }
         }
     
