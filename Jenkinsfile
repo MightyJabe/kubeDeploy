@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Change directory to where the solution file is located
-                dir('ApnaBank') {
+                dir('SimpleWebAppMVC') {
                     sh 'dotnet restore'
                     sh 'dotnet build --configuration Release'
                 }
