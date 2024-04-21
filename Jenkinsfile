@@ -1,6 +1,11 @@
 pipeline {
     agent any
 
+    tools {
+        // Use the name you configured in the .NET Core SDK section
+        dotnet '.net 5.0'
+    }
+
     stages {
         stage('Checkout Jenkinsfile Repo') {
             steps {
