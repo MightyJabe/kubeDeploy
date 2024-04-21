@@ -23,7 +23,6 @@ Create the devops namespace where Jenkins will reside:
 
 kubectl apply -f Kubernetes/devops/devops-namespace.yml
 
-
 Deploying Jenkins
 Deploy Jenkins to the devops namespace:
 
@@ -36,12 +35,8 @@ Deploying the .NET Core Application
 Deploy the .NET Core application to the desired namespace:
 
 kubectl apply -f Kubernetes/staging/app-deployment.yml
-Building and Pushing the Docker Image
-Ensure the Dockerfile is at the root of your project directory and build the image:
 
-docker build -t your-docker-repo/your-app:latest .
-docker push your-docker-repo/your-app:latest
-Replace your-docker-repo/your-app with your actual Docker repository.
+
 
 Jenkins Pipeline
 Set up a Jenkins job using the Jenkinsfile in this repository. The pipeline includes the following stages:
