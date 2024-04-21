@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: dotnet-banking-app
-        image: thicksy/dotnet-banking-app:latest
+        image: thicksy/simple-web-app-mvc-dotnet:latest
         ports:
         - containerPort: 80

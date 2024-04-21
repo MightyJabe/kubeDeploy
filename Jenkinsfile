@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout .NET Application Repo') {
             steps {
                 // This checks out the .NET application code from a different repository
-                git url: 'https://github.com/NikolaRadun/dotnet-banking-app.git'
+                git url: 'https://github.com/adamajammary/simple-web-app-mvc-dotnet.git'
             }
         }
 
@@ -38,7 +38,7 @@ pipeline {
                         // Login to Docker registry
                         sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                         // Build and push the Docker image
-                        docker.build("thicksy/dotnet-banking-app:${BUILD_ID}").push()
+                        docker.build("thicksy/simple-web-app-mvc-dotnet:${BUILD_ID}").push()
                     }
                 }
             }
