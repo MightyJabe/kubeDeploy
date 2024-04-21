@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         // Use the name you configured in the .NET Core SDK section
-        dotnet '.net 5.0'
+        dotnetsdk  '.net 5.0'
     }
 
     stages {
