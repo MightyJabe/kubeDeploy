@@ -17,8 +17,11 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'dotnet restore'
-                sh 'dotnet build --configuration Release'
+                // Change directory to where the solution file is located
+                dir('ApnaBank') {
+                    sh 'dotnet restore'
+                    sh 'dotnet build --configuration Release'
+                }
             }
         }
 
