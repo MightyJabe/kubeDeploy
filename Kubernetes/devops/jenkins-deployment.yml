@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: jenkins
-        image: jenkins/jenkins:lts
+        image: thicksy/jenkins-dotnet-agent:latest
         ports:
         - containerPort: 8080
         volumeMounts:
