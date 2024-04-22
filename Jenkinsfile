@@ -47,7 +47,7 @@ pipeline {
     
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f app-deployment.yml -f /var/jenkins_home/workspace/staging@script/23d4a291a4a5f1c39dee74c655b7b7572abb73f881dc16603864f454499995cc/Kubernetes/staging --namespace=staging'
+                sh 'kubectl apply -f /var/jenkins_home/workspace/staging@script/23d4a291a4a5f1c39dee74c655b7b7572abb73f881dc16603864f454499995cc/Kubernetes/staging/app-deployment.yml --namespace=staging'
             }
         }
     }
