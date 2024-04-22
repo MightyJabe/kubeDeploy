@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  namespace: devops
+  namespace: jenkins
   name: jenkins
 spec:
   replicas: 1
@@ -13,6 +13,7 @@ spec:
       labels:
         app: jenkins
     spec:
+      serviceAccountName: jenkins
       containers:
       - name: jenkins
         securityContext:

@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: jenkins-deployment-rolebinding
+  namespace: staging  # Namespace where the .NET app is deployed
+subjects:
+- kind: ServiceAccount
+  name: jenkins  # The name of the ServiceAccount used by Jenkins in jenkins namespace
+  namespace: jenkins  # Namespace where Jenkins ServiceAccount is created
+roleRef:
+  kind: Role
+  name: jenkins-deployment-role
+  apiGroup: rbac.authorization.k8s.io
