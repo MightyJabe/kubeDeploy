@@ -47,7 +47,10 @@ pipeline {
     
         stage('Deploy to Kubernetes') {
             steps {
-                sh 'kubectl apply -f app-deployment.yml --namespace=staging'
+                withCredentials([string(credentialsId: 'k8s-token', variable: 'K8S_TOKEN')]) {
+                sh 'kubectl apply -f app-deployment.yml --namespace=staging --token=$K8S_TOKEN'
+}
+
             }
         }
     }
