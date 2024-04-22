@@ -38,6 +38,7 @@ pipeline {
                         // Login to Docker registry
                         sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                         // Build and push the Docker image
+                        dir("..") { // Move up one directory, if the Dockerfile is in the root while the .NET code is in a subdirectory.
                         docker.build("thicksy/simple-web-app-mvc-dotnet:latest").push()
                     }
                 }
