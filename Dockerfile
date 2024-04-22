@@ -6,6 +6,7 @@ WORKDIR /app
 
 # Copy everything and build the application
 COPY . ./
+RUN dotnet restore
 RUN dotnet clean
 RUN dotnet build -c Release -r linux-x64 --no-self-contained
 RUN dotnet publish -c Release -r linux-x64 --no-self-contained -o out
