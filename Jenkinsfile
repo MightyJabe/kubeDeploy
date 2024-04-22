@@ -20,6 +20,7 @@ pipeline {
                 // Change directory to where the solution file is located
                 dir('SimpleWebAppMVC') {
                     sh 'dotnet restore'
+                    sh 'dotnet clean'
                     sh 'dotnet build --configuration Release'
                 }
             }

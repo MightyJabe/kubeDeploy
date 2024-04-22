@@ -8,8 +8,8 @@ WORKDIR /app
 COPY . ./
 RUN dotnet restore
 RUN dotnet clean
-RUN dotnet build -c Release -r linux-x64 --no-self-contained
-RUN dotnet publish -c Release -r linux-x64 --no-self-contained -o out
+RUN dotnet build -c Release --no-self-contained
+RUN dotnet publish -c Release --no-self-contained -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:7.0
