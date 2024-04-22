@@ -38,7 +38,7 @@ pipeline {
                         // Login to Docker registry
                         sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
                         // Build and push the Docker image
-                        docker.build("thicksy/simple-web-app-mvc-dotnet:latest", "-f ../../Dockerfile .").push()
+                        docker.build("thicksy/simple-web-app-mvc-dotnet:latest", "-f /var/jenkins_home/workspace/staging@script/56292f8416319d1704df7cfc6ed7c04c8705fd8509ff2b09f2534792a048dc9e/Dockerfile .").push()
                     }
                 }
             }
